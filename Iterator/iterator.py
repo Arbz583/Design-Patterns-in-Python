@@ -12,12 +12,13 @@ class BrowseHistory:
     def create_iterable(self):
         return self.ListIterator(self)
     
+    # SRP Principal
     class ListIterator:
 
         def __init__(self, browsehistory) -> None:
             self.browsehistory = browsehistory
             self.index = 0
-            
+
         def has_next(self):
             return self.index < len(self.browsehistory.urls)
 
@@ -31,6 +32,8 @@ browsehistory_1 = BrowseHistory()
 browsehistory_1.push("a")
 browsehistory_1.push("b")
 browsehistory_1.push("c")
+browsehistory_1.pop()
+
 iterable = browsehistory_1.create_iterable()
 
 while iterable.has_next():
