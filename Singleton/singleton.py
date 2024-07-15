@@ -6,8 +6,8 @@ class ConfigManager:
     def __init__(self):
         if not self.__class__.__allow_init:
             raise ValueError(
-                "Private constructor.\
-                Use 'get_instance' method."
+                "Private constructor."
+                "Use 'get_instance' method."
             )
         self.settings = dict()
 
